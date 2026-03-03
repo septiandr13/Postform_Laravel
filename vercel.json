@@ -1,10 +1,28 @@
 {
+  "framework": null,
+  "buildCommand": "npm ci && npm run build",
   "builds": [
-    { "src": "public/index.php", "use": "vercel-php@0.7.0" }
+    {
+      "src": "api/index.php",
+      "use": "vercel-php@0.7.3",
+      "config": {
+        "includeFiles": [
+          "public/**",
+          "vendor/**",
+          "bootstrap/**",
+          "storage/**",
+          "app/**",
+          "routes/**",
+          "config/**",
+          "database/**",
+          "resources/views/**"
+        ]
+      }
+    }
   ],
   "routes": [
     { "src": "/build/(.*)", "dest": "/public/build/$1" },
     { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
-    { "src": "/(.*)", "dest": "/public/index.php" }
+    { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
