@@ -9,8 +9,8 @@
         "includeFiles": [
           "public/**",
           "vendor/**",
-          "bootstrap/**",
-          "storage/**",
+          "bootstrap/app.php",
+          "bootstrap/providers.php",
           "app/**",
           "routes/**",
           "config/**",
